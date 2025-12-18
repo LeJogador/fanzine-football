@@ -1,96 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Football kit</title>
-    <style>
-        * { margin: 10; box-sizing: border-box}
-        body{ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
-        img { max-width: 100%;}
-
-        section {
-            max-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        
-        section figure { flex: 1 1 100%;}
-        section.content { flex: 0 1 auto;}
-
-        figure { display: flex;} /* wtf why this worky*/
-        section figure img {
-                display: block;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: left top;
-
-        }
-        /* collones */
-        .row { display: flex; gap: 1px;}
-        .row > *{ flex: 1;}
-
-        .content {padding: 1rem;}
-
-
-        /* scroll */
-        html, body { scroll-snap-type: y mandatory;}
-        section {scroll-snap-align: start;}
-
-
-        /* section {outline: 2px solid magenta; outline-offset: -3px;}
-        figure {outline: 2px solid cyan; outline-offset: -3px;}
-        .content {outline: 2px solid orangered; outline-offset: -3px;} */
-
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Maillots de foot</title>
+	<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <section>
-        <figure>
-            <img src="rio.jpg">
-        </figure>
-    
-    <div class="content row">
-        <h3>Anfield</h3>
-        <p>Le stade d'Anfield, parfois appelé Anfield Road, est un stade de football situé dans le quartier d'Anfield (en), au
-        nord-ouest de Liverpool, en Angleterre.</p><p>Le stade d'Anfield, parfois appelé Anfield Road, est un stade de football situé dans le quartier d'Anfield (en), au
-            nord-ouest de Liverpool, en Angleterre.</p>
-    </div>
-    </section>
+	<!-- Barre du menu -->
+	<header>
+		<div class="logo" onclick="goHome()">
+			<span class="bold">Maillots</span> <span class="italic">de foot</span>
+		</div>
 
-    <section>
-        <figure>
-            <img src="rio.jpg">
-        </figure>
-    
-        <div class="content row">
-            <h3>Anfield</h3>
-            <p>Le stade d'Anfield, parfois appelé Anfield Road, est un stade de football situé dans le quartier d'Anfield
-                (en), au
-                nord-ouest de Liverpool, en Angleterre.</p>
-            <p>Le stade d'Anfield, parfois appelé Anfield Road, est un stade de football situé dans le quartier d'Anfield
-                (en), au
-                nord-ouest de Liverpool, en Angleterre.</p>
-        </div>
-    </section>
+		<nav>
+			<a href="japon.html" class="menu-btn">Plus beau</a>
+			<a href="#" class="menu-btn">Plus fou</a>
+			<a href="#" class="menu-btn">Plus moche</a>
+		</nav>
+	</header>
 
-    <section>
-        <figure>
-            <img src="rio.jpg">
-        </figure>
-    
-        <div class="content row">
-            <h3>Anfield</h3>
-            <p>Le stade d'Anfield, parfois appelé Anfield Road, est un stade de football situé dans le quartier d'Anfield
-                (en), au
-                nord-ouest de Liverpool, en Angleterre.</p>
-            <p>Le stade d'Anfield, parfois appelé Anfield Road, est un stade de football situé dans le quartier d'Anfield
-                (en), au
-                nord-ouest de Liverpool, en Angleterre.</p>
-        </div>
-    </section>
+	<!-- Vidéo au centre -->
+	<section class="video-section">
+		<img src="images/c67352ccebd35b48118215a0efa1a275.jpg" Maillot Japon class="maillot">
+	</section>
+
+	<script src="script.js"></script>
 </body>
+
 </html>

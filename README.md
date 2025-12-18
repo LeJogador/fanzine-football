@@ -1,2 +1,0 @@
-# fanzine-football
-neeeeeuuuillllle for

@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fce8f3;
+    color: #222;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #e770a3;
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+/* --- LAYOUT PRINCIPAL : texte à gauche / images à droite --- */
+.layout {
+    display: flex;
+    align-items: flex-start;
+    /* TRÈS IMPORTANT : les deux colonnes commencent en haut */
+    justify-content: space-between;
+    padding: 20px 40px;
+    /* marges... sans pousser vers le bas */
+    gap: 40px;
+}
+
+/* --- SECTION TEXTE À GAUCHE --- */
+.presentation {
+    width: 55%;
+    max-width: 700px;
+}
+
+.presentation h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.presentation .slogan {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+/* --- IMAGES À DROITE, EN COLONNE --- */
+.images {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    /* une image sous l'autre */
+    align-items: flex-end;
+    /* colle tout à droite */
+    gap: 25px;
+    margin-top: 0;
+    /* IMPORTANT : colle bien en haut */
+    padding-top: 0;
+    /* IMPORTANT : évite le décalage */
+}
+
+/* --- Taille et style des images --- */
+.images img {
+    width: 400px;
+    /* plus grandes */
+    border-radius: 14px;
+    object-fit: cover;
+    /* garde joli même si recadré */
+}
+
+.images {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 25px;
+
+    /* FORCE la colonne à commencer tout en haut */
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.presentation {
+    width: 70%;
+    max-width: 700px;
+    margin-left: 20px;
+    /* marge plus large */
+}
