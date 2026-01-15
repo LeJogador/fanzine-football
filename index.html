@@ -2,33 +2,192 @@
 <html lang="fr">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Maillots de foot</title>
-	<link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Fanzine – Maillots de foot</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Playfair+Display:wght@600&display=swap"
+		rel="stylesheet">
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700; /* gras */
+  background: #fff;
+  color: #111;
+  overflow-x: hidden;
+}
+
+		/* HERO */
+		.hero {
+			height: 100vh;
+			background: url("IMG/hero.jpg") center/cover no-repeat;
+			position: relative;
+		}
+
+		.hero::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.6));
+		}
+
+		.hero-title-top {
+			position: absolute;
+			top: 40px;
+			right: 40px;
+			font-size: 3rem;
+			color: white;
+			z-index: 2;
+			letter-spacing: 3px;
+		}
+
+		.hero-title-bottom {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 4.5rem;
+  font-weight: 900;       /* très gras */
+  letter-spacing: -2px;   /* look magazine */
+  color: white;
+  z-index: 2;
+  max-width: 70%;
+}
+
+		/* SCROLL INDICATOR */
+		.scroll {
+			position: absolute;
+			bottom: 30px;
+			right: 50%;
+			transform: translateX(50%);
+			color: white;
+			font-size: 0.9rem;
+			opacity: 0.8;
+			z-index: 2;
+			animation: bounce 2s infinite;
+		}
+
+		@keyframes bounce {
+
+			0%,
+			100% {
+				transform: translate(-50%, 0);
+			}
+
+			50% {
+				transform: translate(-50%, 10px);
+			}
+		}
+
+		/* CATEGORIES */
+		.categories {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 40px;
+			padding: 120px 80px;
+		}
+
+		.card {
+			position: relative;
+			height: 420px;
+			overflow: hidden;
+			cursor: pointer;
+			text-decoration: none;
+		}
+
+		.card img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.6s ease;
+		}
+
+		.card::after {
+			content: "";
+			position: absolute;
+			inset: 0;
+			background: rgba(0, 0, 0, 0.35);
+			opacity: 0;
+			transition: opacity 0.6s ease;
+		}
+
+		.card span {
+			position: absolute;
+			bottom: 30px;
+			left: 30px;
+			font-size: 1.8rem;
+			color: white;
+			z-index: 2;
+			transform: translateY(20px);
+			opacity: 0;
+			transition: all 0.6s ease;
+		}
+
+		.card:hover img {
+			transform: scale(1.15);
+		}
+
+		.card:hover::after {
+			opacity: 1;
+		}
+
+		.card:hover span {
+			transform: translateY(0);
+			opacity: 1;
+		}
+
+		/* RESPONSIVE */
+		@media (max-width: 900px) {
+			.categories {
+				grid-template-columns: 1fr;
+				padding: 80px 30px;
+			}
+
+			.hero-title-bottom {
+				font-size: 3rem;
+			}
+
+			.hero-title-top {
+				font-size: 2rem;
+			}
+		}
+	</style>
 </head>
 
 <body>
 
-	<!-- Barre du menu -->
-	<header>
-		<div class="logo" onclick="goHome()">
-			<span class="bold">Maillots</span> <span class="italic">de foot</span>
-		</div>
-
-		<nav>
-			<a href="japon.html" class="menu-btn">Plus beau</a>
-			<a href="#" class="menu-btn">Plus fou</a>
-			<a href="#" class="menu-btn">Plus moche</a>
-		</nav>
-	</header>
-
-	<!-- Vidéo au centre -->
-	<section class="video-section">
-		<img src="images/c67352ccebd35b48118215a0efa1a275.jpg" Maillot Japon class="maillot">
+	<section class="hero">
+		<div class="hero-title-top">FANZINE</div>
+		<div class="hero-title-bottom">Maillots de foot</div>
+		<div class="scroll">SCROLL ↓</div>
 	</section>
 
-	<script src="script.js"></script>
+	<section class="categories">
+		<a href="maillots.html" class="card">
+			<img src="IMG/ManCity.jpg" alt="Les plus beaux" />
+			<span>Les plus beaux</span>
+		</a>
+
+		<a href="maillots-moches.html" class="card">
+			<img src="img/moches.jpg" alt="Les plus moches" />
+			<span>Les plus moches</span>
+		</a>
+
+		<a href="maillots-special.html" class="card">
+			<img src="img/speciaux.jpg" alt="Les plus spéciaux" />
+			<span>Les plus spéciaux</span>
+		</a>
+	</section>
+
 </body>
 
 </html>
